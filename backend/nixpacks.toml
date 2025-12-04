@@ -1,9 +1,6 @@
 [providers]
 node = "18"
 
-[phases.setup]
-nixPkgs = ["nodejs-18_x"]
-
 [phases.install]
 cmds = ["npm ci"]
 
@@ -12,4 +9,3 @@ cmds = ["npm run build"]
 
 [start]
 cmd = "npm start"
-
