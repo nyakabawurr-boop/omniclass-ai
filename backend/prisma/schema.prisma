@@ -100,7 +100,7 @@ model Subscription {
   startDate     DateTime           @default(now())
   endDate       DateTime
   billingPeriod String             @default("monthly")
-  amount        Decimal
+  amount        Decimal            @db.Decimal(10, 2)
   createdAt     DateTime           @default(now())
   updatedAt     DateTime           @updatedAt
 
