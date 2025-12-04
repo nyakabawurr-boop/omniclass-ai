@@ -1,0 +1,34 @@
+services:
+  - type: web
+    name: omniclass-ai-backend
+    env: node
+    rootDir: backend
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: JWT_REFRESH_SECRET
+        generateValue: true
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: PORT
+        value: "10000"
+      - key: NODE_ENV
+        value: "production"
+
+  - type: web
+    name: omniclass-ai-frontend
+    env: node
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NEXT_PUBLIC_API_URL
+        fromService:
+          name: omniclass-ai-backend
+          type: web
+          property: host
+
