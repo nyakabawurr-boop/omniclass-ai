@@ -36,7 +36,7 @@ Write-Host "✓ Updated DATABASE_URL in backend/.env" -ForegroundColor Green
 Write-Host ""
 Write-Host "Next steps:" -ForegroundColor Yellow
 Write-Host "1. Stop the backend server (Ctrl+C)" -ForegroundColor White
-Write-Host "2. Run: cd backend && npm run prisma:migrate" -ForegroundColor White
-Write-Host "3. Run: cd backend && npm run prisma:seed" -ForegroundColor White
-Write-Host "4. Restart backend: cd backend && npm run dev" -ForegroundColor White
+Write-Host "2. Run: cd backend; npm run prisma:migrate" -ForegroundColor White
+Write-Host "3. Run: cd backend; npm run prisma:seed" -ForegroundColor White
+Write-Host "4. Restart backend: cd backend; npm run dev" -ForegroundColor White
 
